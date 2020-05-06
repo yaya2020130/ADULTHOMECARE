@@ -12,6 +12,11 @@ module.exports=function(sequlize,Datatypes){
         allowNull:false
       };
     });
+    patient.belongsToMany(models.employees,{
+      foreidnKey:{
+        allowNull:false
+      }
+    })
   };
   return patient
 };
