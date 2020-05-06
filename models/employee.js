@@ -5,7 +5,11 @@ module.exports = function(sequelize, DataTypes) {
      phone_no: DataTypes.INTEGER
      
   });
-
+  Employee.associate=function(models){
+  Employee.hasMany(models.Patients,{
+      foreidnKey:{
+        allowNull:false
+      };
 
 
   return Employee;
