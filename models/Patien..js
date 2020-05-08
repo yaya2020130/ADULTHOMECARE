@@ -8,15 +8,16 @@ module.exports=function(sequlize,Datatypes){
   });
   Patient.associate=function(models){
     Patient.belongsTo(models.Manager,{
-      foreidnKey:{
+      foreignKey:{
         allowNull:false
-      };
+      }
     });
-    patient.belongsToMany(models.employees,{
+     Patient.belongsToMany(models.Employee,{
       foreidnKey:{
         allowNull:false
       }
     })
   };
-  return patient
+  return Patient
 };
+

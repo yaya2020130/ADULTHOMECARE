@@ -1,3 +1,4 @@
+
 module.exports = function(sequelize, DataTypes) {
   const Employee = sequelize.define('Employee', {
      name: DataTypes.STRING,
@@ -6,11 +7,13 @@ module.exports = function(sequelize, DataTypes) {
      
   });
   Employee.associate=function(models){
-  Employee.hasMany(models.Patients,{
-      foreidnKey:{
+  Employee.hasMany(models.Patient,{
+      foreignKey:{
         allowNull:false
-      };
-
+      }
+    });
+  }
 
   return Employee;
 };
+
