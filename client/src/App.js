@@ -3,6 +3,8 @@ import logo from './logo.svg';
 import './App.css';
 import FirstPage from './components/layout/FirstPage';
 import Navbar from './components/layout/Navbar';
+import Patient from './components/layout/Patient';
+import Secound from './components/layout/Secound'
 class App extends React.Component{
 // function App() {
   render ()
@@ -29,7 +31,9 @@ class App extends React.Component{
           Learn React
         </a>
       </header> */}
-     <FirstPage/>
+     {/* <FirstPage/> */}
+     <Patient/>
+     <Secound/>
      
     </div>
     
