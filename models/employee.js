@@ -10,12 +10,12 @@ module.exports = function(sequelize, DataTypes) {
      bonus:DataTypes.DECIMAL,
   start_time:{
     type:'TIMESTAMP',
-    defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
+    // defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
     allowNull: false
   },
 end_time:{
   type:'TIMESTAMP',
-    defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
+    // defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
     allowNull: false
 }
      
@@ -23,7 +23,7 @@ end_time:{
   Employee.associate=function(models){
   Employee.hasMany(models.Patient,{
       foreignKey:{
-        allowNull:false
+        allowNull:true
       }
     });
   }

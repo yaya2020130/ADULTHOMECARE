@@ -1,23 +1,26 @@
-import React from 'react'
+import React ,{useState,useEffect}from 'react'
 
 
-function DetailPage() {
+function DetailPage({patient}) {
+  const [patientState,setPatienState]=useState([]);
+  useEffect(()=>setPatienState(patient), [patient])
   return (
     <div>
       <table>
         <thead>
           <tr>
-            <th>firstName</th>
-            <th>LastName</th>
-            <th>age</th>
-            <th>phone_number</th>
+          <th></th>
+            <th>{patientState.firstname}</th>
+            <th>{patientState.lastname}</th>
+            <th>{patientState.phone_number}</th>
+            <th>{patientState.email}</th>
 
           </tr>
         </thead>
 
         <tbody>
           <tr>
-            <td>Patients DetailPage</td>
+          <td>value</td>
             <td>e</td>
             <td>e</td>
             <td>3</td>

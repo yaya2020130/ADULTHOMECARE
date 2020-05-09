@@ -5,7 +5,7 @@
 // *** Dependencies
 // =============================================================
 var express = require("express");
-
+var cors=require('cors')
 // Sets up the Express App
 // =============================================================
 var app = express();
@@ -17,6 +17,7 @@ var db = require("./models");
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(cors());
 
 // Static directory
 // app.use(express.static("public"));
@@ -27,14 +28,23 @@ app.use(express.json());
 app.get("/",(req,res)=>{
   res.send("welcome")
 })
-app.get("/Patient",(req,res)=>{
-  res.json([
-{
-    id:1,
-    name:"yared",
-    age:12
-}
-  ])
+app.get("/patients",(req,res)=>{
+  db.Patient.findAll().then(data=>{
+    console.log(data);
+    res.json(data)
+  })
+
+})
+
+app.get('/api/manager',(req,res)=>{
+  db.Manager.findall().then(Manger=>{
+    res.json(Manager)
+  })
+})
+app.post('/api/patient',(req,res)=>{
+  db.Patient.create(req.body).then(Patient=>{
+    res.json(Patient)
+  })
 })
 // Routes
 // // =============================================================
@@ -44,7 +54,7 @@ app.get("/Patient",(req,res)=>{
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
-db.sequelize.sync({ force: true }).then(function() {
+db.sequelize.sync().then(function() {
   app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
   });
