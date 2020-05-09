@@ -4,6 +4,8 @@ module.exports=function(sequlize,Datatypes){
     lastname:Datatypes.STRING,
     age:Datatypes.INTEGER,
     phone_number:Datatypes.INTEGER
+   
+    
 
   });
   Patient.associate=function(models){

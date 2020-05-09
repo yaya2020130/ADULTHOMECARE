@@ -27,6 +27,15 @@ app.use(express.json());
 app.get("/",(req,res)=>{
   res.send("welcome")
 })
+app.get("/Patient",(req,res)=>{
+  res.json([
+{
+    id:1,
+    name:"yared",
+    age:12
+}
+  ])
+})
 // Routes
 // // =============================================================
 // require("./routes/post-api-routes.js")(app);

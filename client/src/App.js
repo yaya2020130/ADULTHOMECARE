@@ -4,7 +4,7 @@ import './App.css';
 // import FirstPage from './components/layout/FirstPage';
 import Navbar from './components/layout/Navbar';
 import Patient from './components/layout/Patient';
-// import Secound from './components/layout/Secound';
+import Secound from './components/layout/Secound';
 import DetailPage from './components/layout/DetailPage';
 
 

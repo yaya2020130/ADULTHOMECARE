@@ -25,4 +25,4 @@ function Secound(props) {
 
   );
 }
-// export default Secound;
+export default Secound;
