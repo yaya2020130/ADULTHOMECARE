@@ -23,7 +23,7 @@ module.exports = function(sequelize, DataTypes) {
 
   //each user can have many tournament brackets
   User.associate = function(models) {
-      User.hasMany(models.mployee);
+      User.hasMany(models.Employee);
   };
 
  

@@ -1,14 +1,14 @@
 module.exports=function(sequlize,Datatypes){
   const Logbook=sequlize.define('Logbook',{
-   name:Datatypes.String,
-   date:Datatypes.date,
-   status:Datatypes.String,
-   isAlive:Datatypes.Boolean,
-   photoTaken:Datatypes.Boolean,
-    loggedBy: Datatypes.Integer,
+   name:Datatypes.STRING,
+   date:Datatypes.DATE,
+   status:Datatypes.STRING,
+   isAlive:Datatypes.BOOLEAN,
+   photoTaken:Datatypes.BOOLEAN,
+    loggedBy: Datatypes.INTEGER
   });
    Logbook.associate=function(models){
-    Logbook.belongs(models.Patient,{
+    Logbook.belongsTo(models.Patient,{
        foreignKey:{
          allowNull:false
        }

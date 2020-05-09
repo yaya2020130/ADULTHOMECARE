@@ -1,78 +1,28 @@
-import React from 'react'
+import React from 'react';
 
- function Secound(props) {
-   console.log(props)
+function Secound(props) {
+  console.log(props)
   return (
-        
- 
 
-<container>
-<div class="row">
-    <div class="col s12"> ADULT HOME CARE<p>s12</p></div>
-    <div class="col s12 m4 l2"><p>s12 m4</p></div>
-    <div class="col s12 m4 l8"><p>s12 m4</p></div>
-    <div class="col s12 m4 l2"><p>s12 m4</p></div>
+    <container>
+       
+  
+       <div class="row">
+       <div class="col s12 m6 l3">
+      <div class="card">
+        <div class="card-image">
+          <img src="{props.url}"/>
+         <h5> <span class="card-title">{props.name}</span></h5>
+         {/* <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> */}
+        </div>
+        <div class="card-content">
+          <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="row">
-    <div class="col s12 m6 l3"> <div class="row">
-    <div class="col s12 m6">
-      <div class="card blue-grey darken-1">
-        <div class="card-content white-text">
-          <span class="card-title">Card Title</span>
-          <img src={props.url} className="card-img-top" alt="..." style={{maxHeight:"20vh", width:"100%"}}/>
-        </div>
-        <div class="card-action">
-          <a href="#">This is a link</a>
-          <a href="#">This is a link</a>
-        </div>
-      </div>
-    </div>
-  </div>  <p>{props.name}</p></div>
-    <div class="col s12 m6 l3">  <div class="row">
-    <div class="col s12 m6">
-      <div class="card blue-grey darken-1">
-        <div class="card-content white-text">
-          <span class="card-title">Card Title</span>
-          <img src={props.url} className="card-img-top" alt="..." style={{maxHeight:"20vh", width:"100%"}}/>
-        </div>
-        <div class="card-action">
-          <a href="#">This is a link</a>
-          <a href="#">This is a link</a>
-        </div>
-      </div>
-    </div>
-  </div><p>{props.name}</p></div>
-    <div class="col s12 m6 l3"> <div class="row">
-    <div class="col s12 m6">
-      <div class="card blue-grey darken-1">
-        <div class="card-content white-text">
-          <span class="card-title">Card Title</span>
-          <img src={props.url} className="card-img-top" alt="..." style={{maxHeight:"20vh", width:"100%"}}/>
-        </div>
-        <div class="card-action">
-          <a href="#">This is a link</a>
-          <a href="#">This is a link</a>
-        </div>
-      </div>
-    </div>
-  </div><p>{props.name}</p></div>
-    <div class="col s12 m6 l3"><div class="row">
-    <div class="col s12 m6">
-      <div class="card blue-grey darken-1">
-        <div class="card-content white-text">
-          <span class="card-title">Card Title</span>
-          <img src={props.url} className="card-img-top" alt="..." style={{maxHeight:"20vh", width:"100%"}}/>
-        </div>
-        <div class="card-action">
-          <a href="#">This is a link</a>
-          <a href="#">This is a link</a>
-        </div>
-      </div>
-    </div>
-  </div><p>{props.name}</p></div>
-  </div>
-  </container>
+       </container>
 
-  )  
+  );
 }
-export default Secound;
+// export default Secound;

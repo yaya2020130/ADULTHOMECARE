@@ -18,8 +18,11 @@
   },
   "homepage": "https://github.com/yaya2020130/ADULTHOMECARE#readme",
   "dependencies": {
+    "express": "^4.17.1",
     "express-handlebars": "^4.0.4",
     "mysql": "^2.18.1",
+    "mysql2": "^2.1.0",
+    "path": "^0.12.7",
     "sequelize": "^5.21.7"
   }
 }

@@ -1,5 +1,5 @@
 module.exports =function(sequelize,Datatypes){
-  const Manager=sequlize.define('Manager',{
+  const Manager=sequelize.define('Manager',{
    name:Datatypes.STRING,
    age:Datatypes.STRING
 })

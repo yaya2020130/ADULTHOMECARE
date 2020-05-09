@@ -12,11 +12,11 @@ module.exports=function(sequlize,Datatypes){
         allowNull:false
       }
     });
-     Patient.belongsToMany(models.Employee,{
-      foreidnKey:{
-        allowNull:false
-      }
-    })
+    //  Patient.belongsToMany(models.Employee,{
+    //   foreidnKey:{
+    //     allowNull:false
+    //   }
+    // })
   };
   return Patient
 };
