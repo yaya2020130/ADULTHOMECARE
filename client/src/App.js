@@ -3,12 +3,12 @@ import React from 'react';
 // import { Switch,BrowserRouter, Route,Router } from "react-router-dom";
 import './App.css';
 import FirstPage from './components/layout/FirstPage';
-import Navbar from './components/layout/Navbar';
+// import Navbar from './components/layout/Navbar';
 // import Patient from './components/layout/Patient';
 import Secound from './components/layout/Secound';
 import DetailPage from './components/layout/DetailPage';
 import API from './utils/API';
-import Footer from "./components/Footer";
+// import Footer from "./components/Footer";
 import RecordPage from './components/layout/RecordPage';
 
 
@@ -25,17 +25,17 @@ class  App extends React.Component{
     return (
    <>
      <div >
-       <Navbar/>
-      {/* <FirstPage/> */}
+       {/* <Navbar/> */}
+      <FirstPage/>
        
        <DetailPage/>
        
-       <h1 style={{textAlign: "center"}}>HELLO WORLD</h1>
+       {/* {/* <h1 style={{textAlign: "center"}}>HELLO WORLD</h1> */}
      </div>
-     <div className='row container'> 
+     {/* <div className='row container'> 
      {this.state.data.map(a=> <Secound props={a}/>)}
-     </div>
-       <Footer />
+     </div> */} */}
+       {/* <Footer /> */}
 
      {/* <Switch> */}
 
