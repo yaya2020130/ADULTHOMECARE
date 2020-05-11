@@ -10,10 +10,10 @@ function DetailPage({patient}) {
         <thead>
           <tr>
           <th></th>
-            <th>{patientState.firstname}</th>
-            <th>{patientState.lastname}</th>
-            <th>{patientState.phone_number}</th>
-            <th>{patientState.email}</th>
+            {/* <th>{patienState.firstname}</th>
+            <th>{patienState.lastname}</th>
+            <th>{patienState.phone_number}</th> */}
+            <th>{setPatienState.email}</th>
 
           </tr>
         </thead>
@@ -25,7 +25,6 @@ function DetailPage({patient}) {
             <td>e</td>
             <td>3</td>
             <td>3</td>
-
 
           </tr>
 

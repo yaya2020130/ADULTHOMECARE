@@ -1,14 +1,14 @@
 import React,{useState,useEffect} from 'react'
-import DetailPage from './components/layout/DetailPage'
+import DetailPage from './DetailPage'
 
 
 function RecordPage() {
-  const [playerState,setPlayerState]=useState([])
+  const [PatientState,setPatientState]=useState([])
   return (
     <div>
 
 
-     <DetailPage patient={patientState}/> 
+     <DetailPage patient={setPatientState}/> 
     </div>
   )
 }

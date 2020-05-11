@@ -1,5 +1,5 @@
 import axios from "axios";
 
 export default {
-getAllPatients: ()=> axios.get("/patients")
+getAllPatients: ()=> axios.get("/patient")
 }
