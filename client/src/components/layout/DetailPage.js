@@ -1,9 +1,16 @@
 import React ,{useState,useEffect}from 'react'
-
-
-function DetailPage({patient}) {
+import API  from '../../utils/API'
+function DetailPage() {
   const [patientState,setPatienState]=useState([]);
-  useEffect(()=>setPatienState(patient), [patient])
+  useEffect(()=>{
+    loadPaitent()
+  }, [])
+  function loadPaitent(){
+    API.getAllPatients().then(res =>console.log((res)) )
+  }
+// function DetailPage({patient}) {
+//   const [patientState,setPatienState]=useState([]);
+//   useEffect(()=>setPatienState(patient), [patient])
   return (
     <div>
       <table>
