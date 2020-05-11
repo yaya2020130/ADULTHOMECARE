@@ -1,9 +1,17 @@
 import React ,{useState,useEffect}from 'react'
+import API from '../../utils/API';
 
 
-function DetailPage({patient}) {
+function DetailPage() {
   const [patientState,setPatienState]=useState([]);
-  useEffect(()=>setPatienState(patient), [patient])
+  useEffect(()=>{
+    loadPaitent()
+  }, [])
+
+  function loadPaitent(){
+    API.getAllPatients().then(res => console.log(res))
+  }
+
   return (
     <div>
       <table>
@@ -13,7 +21,7 @@ function DetailPage({patient}) {
             {/* <th>{patienState.firstname}</th>
             <th>{patienState.lastname}</th>
             <th>{patienState.phone_number}</th> */}
-            <th>{setPatienState.email}</th>
+            <th>{patientState.email}</th>
 
           </tr>
         </thead>
