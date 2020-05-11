@@ -1,28 +1,18 @@
 module.exports=function(sequlize,Datatypes){
   const Logbook=sequlize.define('Logbook',{
-   name:Datatypes
-
+   name:Datatypes.STRING,
+   date:Datatypes.DATE,
+   status:Datatypes.STRING,
+   isAlive:Datatypes.BOOLEAN,
+   photoTaken:Datatypes.BOOLEAN,
+    loggedBy: Datatypes.INTEGER
   });
- Loogbook.associate=function(models){
-   Logbook.belongs(models.Manager,{
-      foreignKey:{
-        allowNull:false
-      }
-    });
-  };
-  Loogbook.associate=function(models){
-    Logbook.belongs(models.Employee,{
-       foreignKey:{
-         allowNull:false
-       }
-     });
-   };
-   Loogbook.associate=function(models){
-    Logbook.belongs(models.Patient,{
-       foreignKey:{
-         allowNull:false
-       }
-     });
-   };
-  return Loogbook
+  //  Logbook.associate=function(models){
+  //   Logbook.belongsTo(models.Patient,{
+  //      foreignKey:{
+  //        allowNull:false
+  //      }
+  //    });
+  //  };
+  return Logbook
 };
