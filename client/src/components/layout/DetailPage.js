@@ -20,7 +20,7 @@ function DetailPage() {
             {/* <th>{patienState.firstname}</th>
             <th>{patienState.lastname}</th>
             <th>{patienState.phone_number}</th> */}
-            <th>{setPatienState.email}</th>
+            <th>{patientState.email}</th>
 
           </tr>
         </thead>
