@@ -1,6 +1,6 @@
 import React from 'react';
-import Wrapper from './components/layout/Wrapper'
-import { Switch, BrowserRouter as Router, Route } from "react-router-dom";
+
+import {  BrowserRouter as Router, Route } from "react-router-dom";
 // import './App.css';
 import Login from './components/layout/Login';
 import Navbar from './components/layout/Navbar';

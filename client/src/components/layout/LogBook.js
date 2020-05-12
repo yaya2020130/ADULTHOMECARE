@@ -2,13 +2,13 @@ import React from 'react';
 import API from '../../utils/API'
 
 export default function LogBook({ patient, setActivePatient }) {
-  // API.getPatientLog
-  componentDidMount() {
-    API.getAlllogs().then(({ data }) => {
-      this.setState({ data })
-      console.log(data)
-    })
-  }
+  // API.getpatient[0]Log
+  console.log(patient[0]);
+    // API.getpatient[0]Log().then(({ data }) => {
+    //   this.setState({ data })
+    //   console.log(data)
+    // })
+  
   return (
     <div className="container">
       <div className="row">
@@ -16,52 +16,52 @@ export default function LogBook({ patient, setActivePatient }) {
           <table>
             <thead>
               <tr>
-                <th>{patient.firstname}</th>
-                <th>{patient.lastname}</th>
-                <th>{patient.age}</th>
-                <th>{patient.phone_number}</th>
-                <th>{patient.lastname}</th>
-                <th>{patient.address}</th>
-                <th>{patient.email}</th>
-                <th>{patient.lastname}</th>
-                <th>{patient.lastname}</th>
-                <th>{patient.lastname}</th>
+                <th>{patient[0].firstname}</th>
+                <th>{patient[0].lastname}</th>
+                <th>{patient[0].age}</th>
+                <th>{patient[0].phone_number}</th>
+                <th>{patient[0].lastname}</th>
+                <th>{patient[0].address}</th>
+                <th>{patient[0].email}</th>
+                <th>{patient[0].isFoodEaten}</th>
+                <th>{patient[0].patientReview}</th>
+                <th>{patient[0].doctorAppointment}</th>
               </tr>
             </thead>
 
             <tbody>
               <tr>
                 <td>Age</td>
-                <td>{patient.age}</td>
+                <td>{patient[0].age}</td>
               </tr>
               <tr>
                 <td>Email</td>
-                <td>{patient.email}</td>
+                <td>{patient[0].email}</td>
               </tr>
               <tr>
                 <td>Phone</td>
-                <td>{patient.phone_number}</td>
+                <td>{patient[0].phone_number}</td>
               </tr>
               <tr>
                 <td>Address</td>
-                <td>{patient.address}</td>
+                <td>{patient[0].address}</td>
               </tr>
               <tr>
                 <td>Phone</td>
-                <td>{patient.lastname}</td>
+                <td>{patient[0].lastname}</td>
               </tr>
               <tr>
                 <td>Phone</td>
-                <td>{patient.lastname}</td>
+                <td>{patient[0].lastname}</td>
               </tr>
               <tr>
                 <td>Phone</td>
-                <td>{patient.lastname}</td>
+                <td>{patient[0].lastname}</td>
               </tr>
               
             </tbody>
           </table>
-          <button onClick={() => setActivePatient(null)}>Go Back</button>
+          <button onClick={() => setActivePatient([])}>Go Back</button>
         </div>
         <div className="col s6">
           <table>

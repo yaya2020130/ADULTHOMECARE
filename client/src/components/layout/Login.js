@@ -1,4 +1,5 @@
 import React from 'react';
+// import LogInBtn from '../LogInBtn';
 
 
 class Login extends React.Component{
@@ -24,7 +25,11 @@ class Login extends React.Component{
                 <input type="email" placeholder="Email" />
                 <input type="password" placeholder="Password" />
                 <a href="#">Forgot your password?</a>
-                <button id="Log-In">Log In</button>
+                <button  id="Log-In">   Log In</button>
+           
+                {/* <LogInBtn onClick={() =>{}} */}
+           
+           
             </form>
         </div>
         <div class="overlay-container">
