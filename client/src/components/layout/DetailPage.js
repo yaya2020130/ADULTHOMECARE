@@ -17,9 +17,9 @@ function DetailPage() {
         <thead>
           <tr>
           <th></th>
-            {/* <th>{patienState.firstname}</th>
+          <th>{patienState.firstname}</th>
             <th>{patienState.lastname}</th>
-            <th>{patienState.phone_number}</th> */}
+            <th>{patienState.phone_number}</th> 
             <th>{patientState.email}</th>
 
           </tr>

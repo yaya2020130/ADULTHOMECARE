@@ -1,8 +1,14 @@
 import React from 'react';
 import API from '../../utils/API'
 
-export default function Log({ patient, setActivePatient }) {
+export default function LogBook({ patient, setActivePatient }) {
   // API.getPatientLog
+  componentDidMount() {
+    API.getAlllogs().then(({ data }) => {
+      this.setState({ data })
+      console.log(data)
+    })
+  }
   return (
     <div className="container">
       <div className="row">
@@ -11,6 +17,14 @@ export default function Log({ patient, setActivePatient }) {
             <thead>
               <tr>
                 <th>{patient.firstname}</th>
+                <th>{patient.lastname}</th>
+                <th>{patient.age}</th>
+                <th>{patient.phone_number}</th>
+                <th>{patient.lastname}</th>
+                <th>{patient.address}</th>
+                <th>{patient.email}</th>
+                <th>{patient.lastname}</th>
+                <th>{patient.lastname}</th>
                 <th>{patient.lastname}</th>
               </tr>
             </thead>
@@ -25,10 +39,26 @@ export default function Log({ patient, setActivePatient }) {
                 <td>{patient.email}</td>
               </tr>
               <tr>
-                <td>Jonathan</td>
-                <td>Lollipop</td>
-                <td>$7.00</td>
+                <td>Phone</td>
+                <td>{patient.phone_number}</td>
               </tr>
+              <tr>
+                <td>Address</td>
+                <td>{patient.address}</td>
+              </tr>
+              <tr>
+                <td>Phone</td>
+                <td>{patient.lastname}</td>
+              </tr>
+              <tr>
+                <td>Phone</td>
+                <td>{patient.lastname}</td>
+              </tr>
+              <tr>
+                <td>Phone</td>
+                <td>{patient.lastname}</td>
+              </tr>
+              
             </tbody>
           </table>
           <button onClick={() => setActivePatient(null)}>Go Back</button>

@@ -2,12 +2,12 @@ import React from 'react';
 import Wrapper from './components/layout/Wrapper'
 import { Switch, BrowserRouter as Router, Route } from "react-router-dom";
 // import './App.css';
-import FirstPage from './components/layout/FirstPage';
+import Login from './components/layout/Login';
 import Navbar from './components/layout/Navbar';
 import Patient from './components/layout/Patient';
 import API from './utils/API';
 import Footer from "./components/Footer";
-
+import LogBook from './components/layout/LogBook'
 
 
 
@@ -20,13 +20,15 @@ class App extends React.Component {
       console.log(data)
     })
   }
+  
+
 
   render() {
     return (
       <Router>
           <Navbar />
-          <Route exact path="/" component={FirstPage} />
-          {/* <Route exact path="/Logbook" component={Logbook} /> */}
+          <Route exact path="/" component={Login} />
+          <Route exact path="/logbook" component={LogBook} />
           <Route exact path="/patient" component={() => <Patient data={this.state.data} />} />
           <Footer />
       </Router>

@@ -6,7 +6,10 @@ export default () =>
     <nav>
       <div class="nav-wrapper">
 
-        <a href="#" class="brand-logo">WELCOME </a>
+        <a href="#" class="brand-logo"><h5
+        tyle={{textAlign: "center"
+        
+        }}>DAYA App</h5></a>
 
 
         <ul className="navbar-nav">
@@ -14,28 +17,29 @@ export default () =>
             <a
               to="/"
               className={
-                window.location.pathname === "/" || window.location.pathname === "/about"
+                window.location.pathname === "/" || window.location.pathname === "/login"
                   ? "nav-link active"
                   : "nav-link"
               }
             >
-              login page
+              Login 
             </a>
           </li>
           <li className="nav-item">
             <a
-              to="/discover"
-              className={window.location.pathname === "/discover" ? "nav-link active" : "nav-link"}
+              to="/patient"
+              className={window.location.pathname === "/patient" ? "nav-link active" : "nav-link"}
             >
-              Detail page
+              patient
             </a>
           </li>
           <li className="nav-item">
             <a
-              to="/search"
-              className={window.location.pathname === "/search" ? "nav-link active" : "nav-link"}
+              to="/logbook"
+              className={window.location.pathname === "/logbook" ? "nav-link active" : "nav-link"}
+              
             >
-              Loog book
+              Logbook
             </a>
           </li>
         </ul>

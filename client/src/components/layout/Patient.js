@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import Secound from './Secound';
-import Log from './Log'
+import Log from './LogBook'
 
 export default ({data})=>{
   const [activePatient, setActivePatient] = useState(null)
