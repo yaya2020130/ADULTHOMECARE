@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-class FirstPage extends React.Component{
+class Login extends React.Component{
   render(){
     return(
       <div className="container" id="container">
@@ -88,4 +88,4 @@ class FirstPage extends React.Component{
     
   }
 }
-export default FirstPage;
+export default Login;

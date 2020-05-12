@@ -26,8 +26,15 @@ app.use(cors());
 
 
 app.get("/",(req,res)=>{
-  res.send("welcome")
+  res.render("login")
 })
+// app.get("/login",(req,res)=> {
+//   res.render("login"); 
+// })
+// // signup page
+// app.get("/signup",(req,res)=> {
+//   res.render("login"); 
+// })
 app.get("/patients",(req,res)=>{
   db.Patient.findAll().then(data=>{
     console.log(data);
@@ -41,11 +48,67 @@ app.get('/api/manager',(req,res)=>{
     res.json(Manager)
   })
 })
+app.get("/api/logs/:id",(req,res)=>{
+  db.Patient.findOne().then(data=>{
+    console.log(data);
+    res.json(data)
+  })
+
+})
+
 app.post('/api/patient',(req,res)=>{
-  db.Patient.create(req.body).then(Patient=>{
-    res.json(Patient)
+  db.Patient.create(req.body).then(data=>{
+    res.json(data)
   })
 })
+
+
+
+
+app.post('/api/logs',(req,res)=>{
+  db.LogBook.create(req.body).then(data=>{
+    res.json(data)
+  })
+})
+
+// ===========
+
+
+
+
+// Get one patient By id
+app.get('/patient/:id',(req,res)=>{
+  const id=req.params.id;
+  db.Patient.findOne({
+    where:{id:id}})
+.then(data =>{
+  res.json(data)
+}) 
+ })
+
+
+
+
+
+ // POST single Patient
+ app.post('/patient', (req, res) => {
+  const name = req.body.name;
+  const role = req.body.role;
+  db.owners.create({
+    name: name,
+    role: role
+  })
+    .then(newOwner => {
+      res.json(newOwner);
+    })
+});
+ 
+    
+
+
+
+
+
 // Routes
 // // =============================================================
 // require("./routes/post-api-routes.js")(app);
