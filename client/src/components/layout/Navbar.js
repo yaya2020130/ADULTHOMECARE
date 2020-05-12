@@ -1,20 +1,20 @@
 import React from 'react';
-
+import {Link} from "react-router-dom";
 
 export default () =>
   <>
     <nav>
       <div class="nav-wrapper">
-
+      
         <a href="#" class="brand-logo"><h5
         tyle={{textAlign: "center"
         
         }}>DAYA App</h5></a>
 
-
+<div>
         <ul className="navbar-nav">
           <li className="nav-item">
-            <a
+            <Link
               to="/"
               className={
                 window.location.pathname === "/" || window.location.pathname === "/login"
@@ -23,27 +23,28 @@ export default () =>
               }
             >
               Login 
-            </a>
+            </Link>
           </li>
           <li className="nav-item">
-            <a
+            <Link
               to="/patient"
               className={window.location.pathname === "/patient" ? "nav-link active" : "nav-link"}
             >
-              patient
-            </a>
+              Patient
+            </Link>
           </li>
           <li className="nav-item">
-            <a
+            <Link
               to="/logbook"
               className={window.location.pathname === "/logbook" ? "nav-link active" : "nav-link"}
               
             >
               Logbook
-            </a>
+            </Link>
           </li>
         </ul>
 
+      </div>
       </div>
     </nav>
   </>
