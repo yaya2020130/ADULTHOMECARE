@@ -1,5 +1,5 @@
 import React,{useState,useEffect} from 'react'
-import DetailPage from './DetailPage'
+import DetailPage from '../DetailPage/DetailPage'
 
 
 function RecordPage() {

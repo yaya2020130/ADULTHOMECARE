@@ -26,7 +26,7 @@ app.use(cors());
 
 
 app.get("/",(req,res)=>{
-  res.render("login")
+  res.send("logIn")
 })
 // app.get("/login",(req,res)=> {
 //   res.render("login"); 
@@ -48,8 +48,12 @@ app.get('/api/manager',(req,res)=>{
     res.json(Manager)
   })
 })
-app.get("/api/logs/:id",(req,res)=>{
-  db.Patient.findOne().then(data=>{
+app.get("/api/logbook/:id",(req,res)=>{
+  db.Patient.findOne({
+    where:{
+      id:req.params.id
+    }
+  }).then(data=>{
     console.log(data);
     res.json(data)
   })
@@ -65,7 +69,7 @@ app.post('/api/patient',(req,res)=>{
 
 
 
-app.post('/api/logs',(req,res)=>{
+app.post('/api/logbook',(req,res)=>{
   db.LogBook.create(req.body).then(data=>{
     res.json(data)
   })
@@ -88,18 +92,33 @@ app.get('/patient/:id',(req,res)=>{
 
 
 
+ app.get("/newEntry",(req,res)=>{
+  db.Patient.findAll().then(data=>{
+    console.log(data);
+    res.json(data)
+  })
+
+})
+ 
 
 
  // POST single Patient
- app.post('/patient', (req, res) => {
-  const name = req.body.name;
-  const role = req.body.role;
-  db.owners.create({
-    name: name,
-    role: role
+ app.post('/newEntry', (req, res) => {
+  const lastname = req.body.lastname;
+  const firstname=req.body.firstname
+  const email = req.body.email;
+  const phone_number=req.body.phone_number;
+  const address=req.body.address
+
+  db.Patient.create({
+    lastname: lastname,
+    firstname: firstname,
+    email:email,
+    phone_number:phone_number,
+    address:address
   })
-    .then(newOwner => {
-      res.json(newOwner);
+    .then(newPat => {
+      res.json(newPat);
     })
 });
  
@@ -117,7 +136,8 @@ app.get('/patient/:id',(req,res)=>{
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
-db.sequelize.sync().then(function() {
+db.sequelize.sync({force:false
+}).then(function() {
   app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
   });
