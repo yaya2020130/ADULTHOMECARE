@@ -1,10 +1,16 @@
 import React, { useState } from 'react';
 import Secound from './Secound';
 import Log from './LogBook'
+import { Link, useHistory } from "react-router-dom"
 
 export default ({ data }) => {
   // const [activePatient, setActivePatient] = useState(null)
-  const [activePatient, setActivePatient] = useState([])
+  const [activePatient, setActivePatient] = useState([]);
+  let history = useHistory();
+  function goToLogbook(patient) {
+    setActivePatient(patient);
+    history.push(`/patient/${patient[0].id}`);
+  }
   return <>
     <div >
       <h1>HELLO WORLD</h1>
@@ -14,10 +20,10 @@ export default ({ data }) => {
         <Log patient={activePatient} setActivePatient={setActivePatient} />
       ) : (
           data.map(patientData => (
-            <Secound
-              patientData={patientData}
-              setActivePatient={setActivePatient}
-            />
+              <Secound
+                patientData={patientData}
+                goToLogbook={goToLogbook}
+              />
           ))
         )}
     </div>
