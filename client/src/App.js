@@ -13,7 +13,7 @@ import Login from './layout/Login';
 
 
 class App extends React.Component {
-  state = { data: [] }
+  state = { data: [], user: {} }
 
   componentDidMount() {
     API.getAllPatients().then(({ data }) => {

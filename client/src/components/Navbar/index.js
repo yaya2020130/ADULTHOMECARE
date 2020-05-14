@@ -6,10 +6,7 @@ export default () =>
     <nav>
       <div class="nav-wrapper">
       
-        <a href="#" className="brand-logo"><h5
-        tyle={{textAlign: "center"
-        
-        }}>DAYA App</h5></a>
+        <a href="#" className="brand-logo center">DAYA App</a>
 
 <div>
         <ul className="navbar-nav">
