@@ -4,6 +4,8 @@ import API from '../utils/API';
 import { Link, useParams } from "react-router-dom";
 import Patient from './Patient';
 
+import Calendar from "react-calendar"
+// import DatePicker from 'react-date-picker';
 // export default function LogBook({ patientData, setActivePatient }) {
 //   // API.getpatient[0]Log
 //   setActivePatient(patientData[0]);
@@ -113,9 +115,19 @@ import Patient from './Patient';
 // }, [])
 
 function LogBook() {
+  // created the use state to update the table
   const [patientData, setPatientData] = useState({});
+  const [age, setAge] = useState('')
+  const [lastName, setLastname] = useState('')
+  const [firstName, setFirstName] = useState('')
+  const [password, setPassword] = useState('')
+  const [address, setAddress] = useState('')
+  const [phone, setPhone] = useState('')
+  const [date, setDate] = useState('')
 
-  // const [formObject, setFormObject] = useState({})
+
+
+  // using the api a data is collected from the database by id for a single patient
   useEffect(() => {
     loadPaitent()
   }, [])
@@ -128,9 +140,7 @@ function LogBook() {
       })
       .catch(err => console.log(err));
   }
-  // function DetailPage({patient}) {
-  //   const [patientState,setPatienState]=useState([]);
-  //   useEffect(()=>setPatienState(patient), [patient])
+  
 
 
 
@@ -138,69 +148,75 @@ function LogBook() {
 
 
 
-    <div className="container">
+    <div className="container" >
       <div className="row">
         <div className="col s6">
           {/* <table class="striped"> */}
-          <table>
+          <table ClassName="variant=dark">
             <thead>
               <tr>
-                <th> Name</th>
+                <th> Item</th>
                 <th>value</th>
-                <th> Name</th>
-                <th>value</th>
-                {/* <th>{patientData.age}</th>
-                <th>{patientData.phone_number}</th>
+                <th> update</th>
+                <th>button</th>
 
-                <th>{patientData.address}</th>
-                <th>{patientData.email}</th>
-                <th>{patientData.isFoodEaten}</th>
-                <th>{patientData.patientReview}</th>
-                <th>{patientData.doctorAppointment}</th> */}
-                   
+
               </tr>
-               
-              
+
+
             </thead>
-                  
+
             <tbody>
               <tr>
                 <td>Fist Name</td>
                 <td>{patientData.firstname}</td>
-                <td><input onChange={"something"}></input></td>
+                <td><input onChange={(e) => setPassword(e.target.value)}      ></input></td>
                 <td><button>test</button></td>
+
               </tr>
               <tr>
                 <td>Last Name</td>
                 <td>{patientData.lastname}</td>
+                <td><input onChange={(e) => setLastname(e.target.value)}      ></input></td>
+                <td><button>Submit</button></td>
               </tr>
               <tr>
                 <td>Age</td>
                 <td>{patientData.age}</td>
+                <td><input onChange={(e) => setAge(e.target.value)}      ></input></td>
+                <td><button>Submit</button></td>
               </tr>
               <tr>
                 <td>Address</td>
                 <td>{patientData.address}</td>
+                <td><input onChange={(e) => setAddress(e.target.value)}      ></input></td>
+                <td><button>Submit</button></td>
               </tr>
               <tr>
                 <td>Phone</td>
                 <td>{patientData.phone_number}</td>
+                <td><input onChange={(e) => setPhone(e.target.value)}      ></input></td>
+                <td><button>Submit</button></td>
               </tr>
               <tr>
                 <td>Food</td>
                 <td>{patientData.isFoodEaten}</td>
+                <td>
+                  <label><input class="with-gap" name="group3" type="radio" checked /><span>True</span></label></td>
               </tr>
               <tr>
                 <td>patientReview</td>
                 <td>{patientData.patientReview}</td>
+                <td><textarea id="textarea1" class="materialize-textarea" ></textarea></td>
+                <td><button>Submit</button></td>
               </tr>
               <tr>
                 <td>Doctors Appointment</td>
                 <td>{patientData.doctorAppointment}</td>
+                <td><Calendar onChange={(e) => setDate(e.target.value)} /></td>
               </tr>
 
-            </tbody>
-            <tbody>tyyyy
+
 
             </tbody>
           </table>
