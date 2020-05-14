@@ -134,18 +134,6 @@ function LogBook() {
 
 
 
-  // function handleFormSubmit(event) {
-  //   event.preventDefault();
-  //   if (formObject.title && formObject.author) {
-  //     API.saveBook({
-  //       title: formObject.title,
-  //       author: formObject.author,
-  //       synopsis: formObject.synopsis
-  //     })
-  //       .then(res => loadBooks())
-  //       .catch(err => console.log(err));
-  //   }
-  // };
   return (
 
 
@@ -153,26 +141,34 @@ function LogBook() {
     <div className="container">
       <div className="row">
         <div className="col s6">
-          <table class="striped">
+          {/* <table class="striped"> */}
+          <table>
             <thead>
               <tr>
-                <th>{patientData.firstname}</th>
-                <th>{patientData.lastname}</th>
-                <th>{patientData.age}</th>
+                <th> Name</th>
+                <th>value</th>
+                <th> Name</th>
+                <th>value</th>
+                {/* <th>{patientData.age}</th>
                 <th>{patientData.phone_number}</th>
 
                 <th>{patientData.address}</th>
                 <th>{patientData.email}</th>
                 <th>{patientData.isFoodEaten}</th>
                 <th>{patientData.patientReview}</th>
-                <th>{patientData.doctorAppointment}</th>
+                <th>{patientData.doctorAppointment}</th> */}
+                   
               </tr>
+               
+              
             </thead>
-
+                  
             <tbody>
               <tr>
                 <td>Fist Name</td>
                 <td>{patientData.firstname}</td>
+                <td><input onChange={"something"}></input></td>
+                <td><button>test</button></td>
               </tr>
               <tr>
                 <td>Last Name</td>
@@ -204,6 +200,9 @@ function LogBook() {
               </tr>
 
             </tbody>
+            <tbody>tyyyy
+
+            </tbody>
           </table>
           {/* <button onClick={() => setActivePatient([])}>Go Back</button> */}
 
@@ -213,7 +212,7 @@ function LogBook() {
 
 
         </div>
-        <div className="col s6">
+        <container className="col s6">
           <table>
             <thead>
               <tr>
@@ -238,7 +237,7 @@ function LogBook() {
               </tr>
             </tbody>
           </table>
-        </div>
+        </container>
       </div>
 
 

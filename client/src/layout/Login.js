@@ -1,69 +1,42 @@
 import React, {useState} from 'react'
 import  "../components/LogInBtn/style.css";
-import {useHistory} from "react-router-dom"
+//
 // import LogInBtn from '../LogInBtn';
 import API from "../utils/API"
 
 function Login(props){
-    const[loginState,setLoginState]=useState({
-        username:"",
-        password:""
+   const [username, setUsername] = useState('');
+   const [password, setPassword] = useState('');
+   const [code, setCode] = useState('');
+    const [login, setLogin] = useState(false);
 
-    })
-    const history = useHistory();
 
-    const handleInputChange = event=>{
-        const {name,value} = event.target;
-        setLoginState({
-            ...loginState,
-            [name]:value
-        })
+    const handleLogin = () =>{
+        console.log(username,password)
+        API.login({username,password}).then(data=> console.log(data))
     }
 
-
-
-    const handleFormSubmit = event=>{
-        event.preventDefault();
-        API.login(loginState).then(res=>{
-            console.log(res.data);
-            if(res.data.user){
-                props.submitHandler(res.data.user)
-            } else {
-                props.submitHandler(false)
-            }
-
-        })
+    const handleSignup = () =>{
+        API.signup({username,password, code})
     }
 
     
     return(
     
- <div class="login-page">
+ <div class="login-page container">
  <div className ="row">
 
-    <div className='col s6'>
-    <form class="register-form">
+    <div className='col s12'>
+    <div class="register-form">
+        <h2>{login ? "Log In" : "Sign Up"}</h2>
           <div>
-            <input id="create-name" type="text" placeholder="inter yourname" onChange = {handleInputChange} value = {loginState.username} />
+            <input id="create-name" type="text" placeholder="enter your email" onChange = {(e)=>setUsername(e.target.value)} />
           </div>
-            <input id="create-password" type="password" placeholder="Inter your password" onChange = {handleInputChange} value = {loginState.password} /><div/>
-           
-            <button  onClick={handleFormSubmit} id="create-acc">create</button>
-            <p class="message">Already registered? <a href="#">Sign In</a></p>
-        </form>
-
-    </div>
-    <div className='col s6'>
-    <form class="login-form">
-          <div>
-            <input id="login-name" type="text" placeholder="username" onChange = {handleInputChange} value = {loginState.username} />
-           </div>
-            <input id="login-password" type="password" placeholder="password" onChange = {handleInputChange} value = {loginState.password} /><div/>
-            <button onClick={handleFormSubmit}id="login-acc">login</button>
-          
-            <p class="message">Not registered? <a href="#">Create an account</a></p>
-        </form>
-
+            <input id="create-password" type="password" placeholder="enter your password" onChange = {(e)=>setPassword(e.target.value)}/><div/>
+            {login ? "" : <><input type="text" placeholder="registration code" onChange = {(e)=>setCode(e.target.value)}/><div/></>}
+            <button  onClick={login ? handleLogin : handleSignup} id="create-acc">{login ? "Log In" : "Submit"}</button>
+            {login ? <p class="message">Not registered? <a onClick={()=>setLogin(false)} href="#">Create an account</a></p> : <p class="message">Already registered? <a onClick={()=>setLogin(true)} href="#">Sign In</a></p>}
+        </div>
     </div>
 
  </div>

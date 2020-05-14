@@ -1,5 +1,6 @@
 import axios from "axios";
-import logInbtn from "../components/LogInBtn"; const BASE_URL = "http://localhost:8080"
+import logInbtn from "../components/LogInBtn"; 
+const BASE_URL = "http://localhost:8080"
 
 
 export default {
@@ -8,5 +9,11 @@ getPatientLog: (id)=> axios.get(`${BASE_URL}/patient/${id}`),
 
  // login btn
  getLogInbtn: (id) =>
-   axios.post(`${BASE_URL}/` + id)
-}
+   axios.post(`${BASE_URL}/` + id),
+
+// creating a route that appdates the patients ifo
+editPatient:(data,id)=>axios.get(`${BASE_URL}/patient/${id}`, data),
+login: (data)=> axios.post(`${BASE_URL}/api/login`, data),
+signup: (data)=> axios.post(`${BASE_URL}/api/signup`, data),
+
+  }
