@@ -1,6 +1,7 @@
 import axios from "axios";
 // import logInbtn from "../components/LogInBtn"; 
-const BASE_URL = "http://localhost:8080"
+// const BASE_URL = "http://localhost:8080"
+const BASE_URL="https://dashboard.heroku.com/apps/adulthomecare-backend"
 export default {
   getPatientData: (id) => axios.get(`${BASE_URL}/patient/${id}`),
   // getPatientLog: (id) => axios.get(`${BASE_URL}/log/${id}`),
